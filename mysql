@@ -1,0 +1,49 @@
+mysql> CREATE TABLE Planets (
+    -> planet_id INTEGER PRIMARY KEY,
+    -> planet_name VARCHAR(50) NOT NULL,
+    -> diameter DECIMAL,
+    -> distance_from_sun DECIMAL NOT NULL
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> DESCRIBE Planets;
++-------------------+---------------+------+-----+---------+-------+
+| Field             | Type          | Null | Key | Default | Extra |
++-------------------+---------------+------+-----+---------+-------+
+| planet_id         | int           | NO   | PRI | NULL    |       |
+| planet_name       | varchar(50)   | NO   |     | NULL    |       |
+| diameter          | decimal(10,0) | YES  |     | NULL    |       |
+| distance_from_sun | decimal(10,0) | NO   |     | NULL    |       |
++-------------------+---------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> ALTER TABLE Planets
+    -> MODIFY diameter DECIMAL NOT NULL;
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> CREATE TABLE GALAXIES (
+    -> galaxy_id INTEGER PRIMARY KEY,
+    -> galaxy_name VARCHAR(50) NOT NULL,
+    -> desciption TEXT,
+    -> number_of_stars INTEGER
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> DROP TABLE GALAXIES;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> DESCRIBE Planets;
++-------------------+---------------+------+-----+---------+-------+
+| Field             | Type          | Null | Key | Default | Extra |
++-------------------+---------------+------+-----+---------+-------+
+| planet_id         | int           | NO   | PRI | NULL    |       |
+| planet_name       | varchar(50)   | NO   |     | NULL    |       |
+| diameter          | decimal(10,0) | NO   |     | NULL    |       |
+| distance_from_sun | decimal(10,0) | NO   |     | NULL    |       |
++-------------------+---------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> DESCRIBE GALAXIES;
+ERROR 1146 (42S02): Table 'db1.galaxies' doesn't exist
+mysql>
